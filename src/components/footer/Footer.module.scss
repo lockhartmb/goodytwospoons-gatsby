@@ -1,0 +1,17 @@
+.footer {
+  text-align: center;
+  padding: 50px 0;
+  background-image: url("../../img/back.png");
+
+  .phoneNumber {
+    font-size: 2rem;
+    color: #ed3d5b;
+    margin-bottom: 15px;
+  }
+
+  a {
+    font-size: 3rem;
+    color: #ed3d5b;
+    display: block;
+  }
+}
