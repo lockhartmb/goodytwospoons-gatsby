@@ -182,6 +182,14 @@ input::-moz-focus-inner {
 	margin: 0;
 }
 
+h1 {
+	font-size: 3rem;
+}
+
+h2 {
+	font-size: 2.5rem;
+}
+
 h3 {
 	font-size: 2rem;
 	font-family: "Lily Script One", sans-serif;
@@ -210,6 +218,7 @@ h4 {
 
 .buttonLink {
 	color: #ffffff;
+	font-size: 1.2rem;
 	background-color: #ed3d5b;
 	padding: 8px 35px;
 	border-radius: 5px;
