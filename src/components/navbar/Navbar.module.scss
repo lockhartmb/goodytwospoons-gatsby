@@ -1,0 +1,26 @@
+.hamburgerIcon {
+	margin-left: auto;
+	display: block;
+	font-size: 2rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.menu {
+	text-align: left;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100vh;
+	background-color: rgba(grey, 0.5);
+	width: 40%;
+
+	ul {
+		list-style: none;
+
+		a {
+			text-decoration: none;
+		}
+	}
+}

@@ -1,29 +1,23 @@
 import React from "react";
-// import PropTypes from "prop-types";
 import { graphql } from "gatsby";
-
+import pinkCupcake from "../img/pinkCupcake.jpg";
+import lemonCupcake from "../img/lemonCupcake.jpg";
 import Layout from "../components/Layout";
-// import Features from "../components/Features";
-// import BlogRoll from "../components/BlogRoll";
+import Header from "../components/header/Header";
+import Section from "../components/section/Section";
+import Divider from "../components/divider/Divider";
 
 export const IndexPageTemplate = () => (
-  // {
-  // image,
-  // title,
-  // heading,
-  // subheading,
-  // mainpitch,
-  // description,
-  // intro
-  // }
-  <main>
-    <header></header>
-    <section id="goodiesIDo"></section>
-    <section id="divider"></section>
-    <section id="aboutMe"></section>
-    <section id="divider"></section>
-    <section id="peopleAreSaying"></section>
-  </main>
+  <>
+    <Header />
+    <main>
+      <Section title="Goodies that I do" />
+      <Divider image={pinkCupcake} />
+      <Section title="About me" />
+      <Divider image={lemonCupcake} />
+      <Section title="What people are saying" />
+    </main>
+  </>
 );
 
 IndexPageTemplate.propTypes = {

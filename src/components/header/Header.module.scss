@@ -1,0 +1,15 @@
+.header {
+	background-color: #c5c3c3;
+	min-height: 100vh;
+	height: 100%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	.headerLogo {
+		margin: 0 auto;
+		display: block;
+		width: 30%;
+	}
+}
