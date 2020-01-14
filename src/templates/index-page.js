@@ -4,21 +4,35 @@ import pinkCupcake from "../img/pinkCupcake.jpg";
 import lemonCupcake from "../img/lemonCupcake.jpg";
 import Layout from "../components/Layout";
 import Header from "../components/header/Header";
-import Section from "../components/section/Section";
+import GoodiesSection from "../components/goodiessection/GoodiesSection";
 import Divider from "../components/divider/Divider";
 
-export const IndexPageTemplate = () => (
-  <>
-    <Header />
-    <main>
-      <Section title="Goodies that I do" />
-      <Divider image={pinkCupcake} />
-      <Section title="About me" />
-      <Divider image={lemonCupcake} />
-      <Section title="What people are saying" />
-    </main>
-  </>
-);
+export const IndexPageTemplate = ({
+  image,
+  title,
+  heading,
+  subheading,
+  goodiesTitle,
+  goodiesDescription,
+  goodiesGallery
+}) => {
+  console.log(goodiesGallery);
+  return (
+    <>
+      <Header heading={heading} subheading={subheading} />
+      <main>
+        <GoodiesSection
+          goodiesTitle={goodiesTitle}
+          description={goodiesDescription}
+        />
+        <Divider image={pinkCupcake} />
+        {/* <Section title="About me" /> */}
+        <Divider image={lemonCupcake} />
+        {/* <Section title="What people are saying" /> */}
+      </main>
+    </>
+  );
+};
 
 IndexPageTemplate.propTypes = {
   // image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -42,9 +56,9 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
+        goodiesTitle={frontmatter.goodiesTitle}
+        goodiesDescription={frontmatter.goodiesDescription}
+        goodiesGallery={frontmatter.goodiesGallery}
       />
     </Layout>
   );
@@ -74,25 +88,8 @@ export const pageQuery = graphql`
         }
         heading
         subheading
-        mainpitch {
-          title
-          description
-        }
-        description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-          }
-          heading
-          description
-        }
+        goodiesTitle
+        goodiesDescription
       }
     }
   }

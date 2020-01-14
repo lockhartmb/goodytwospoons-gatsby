@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import styles from "./Navbar.module.scss";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
-import logo from "../../img/GTS.png";
+// import logo from "../../img/GTS.png";
 
 const Navbar = () => {
   const [hamburgerMenuOpen, setHamburgerMenuOpen] = useState(false);

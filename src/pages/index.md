@@ -1,9 +1,17 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
+title: Goody Two Spoons
 image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
+heading: Welcome to Goody Two Spoons
+subheading: Gluten-free baking
+goodiesTitle: Goodies That I Do
+goodiesDescription:
+  I make a variety of delicious fluten-free desserts including cakes,
+  cupcakes, cookies, square, and pies.
+goodiesGallery:
+  - static/img/cupcakeExample.jpg
+  - static/img/dalaHorseCookies.png
+  - static/img/chocolateCake.jpg
 mainpitch:
   title: Why Kaldi
   description: >
