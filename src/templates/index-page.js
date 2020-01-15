@@ -14,22 +14,32 @@ export const IndexPageTemplate = ({
   subheading,
   goodiesTitle,
   goodiesDescription,
-  goodiesGallery
+  aboutTitle,
+  aboutText,
+  pinkCupcake,
+  lemonCupcake,
+  backgroundImage
 }) => {
   return (
     <>
       <Header heading={heading} subheading={subheading} />
       <main>
         <GoodiesSection
-          title="Goodies That I Do"
-          description="Description of goodies"
+          title={goodiesTitle}
+          description={goodiesDescription}
+          backgroundImage={backgroundImage}
         />
-        <Divider />
-        <AboutSection title="About me" description="description of about me" />
-        <Divider />
+        <Divider src={lemonCupcake} />
+        <AboutSection
+          title={aboutTitle}
+          description={aboutText}
+          backgroundImage={backgroundImage}
+        />
+        <Divider src={pinkCupcake} />
         <TestimonialsSection
           title="What people are saying"
           description="testimonials description"
+          backgroundImage={backgroundImage}
         />
       </main>
     </>
@@ -50,6 +60,9 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
+  const pinkCupcake = data.pink.edges[0].node.childImageSharp.fluid;
+  const lemonCupcake = data.lemon.edges[0].node.childImageSharp.fluid;
+  const backgroundImage = data.background.edges[0].node.childImageSharp.fluid;
 
   return (
     <Layout>
@@ -58,9 +71,14 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
-        goodiesTitle={frontmatter.goodiesTitle}
-        goodiesDescription={frontmatter.goodiesDescription}
-        goodiesGallery={frontmatter.goodiesGallery}
+        goodiesTitle={frontmatter.goodies.goodiesTitle}
+        goodiesDescription={frontmatter.goodies.goodiesDescription}
+        aboutTitle={frontmatter.about.aboutTitle}
+        aboutText={frontmatter.about.aboutText}
+        // aboutImage={frontmatter.aboutImage.childImageSharp.fluid}
+        pinkCupcake={pinkCupcake}
+        lemonCupcake={lemonCupcake}
+        backgroundImage={backgroundImage}
       />
     </Layout>
   );
@@ -83,6 +101,47 @@ export const pageQuery = graphql`
         title
         heading
         subheading
+        goodies {
+          goodiesTitle
+          goodiesText
+        }
+        about {
+          aboutTitle
+          aboutText
+        }
+      }
+    }
+    lemon: allFile(filter: { name: { eq: "lemonCupcake" } }) {
+      edges {
+        node {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+    pink: allFile(filter: { name: { eq: "pinkCupcake" } }) {
+      edges {
+        node {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+    background: allFile(filter: { name: { eq: "back" } }) {
+      edges {
+        node {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
