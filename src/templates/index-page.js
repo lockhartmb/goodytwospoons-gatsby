@@ -1,30 +1,40 @@
 import React from "react";
-// import PropTypes from "prop-types";
 import { graphql } from "gatsby";
-
 import Layout from "../components/Layout";
-// import Features from "../components/Features";
-// import BlogRoll from "../components/BlogRoll";
+import Header from "../components/header/Header";
+import GoodiesSection from "../components/goodiessection/GoodiesSection";
+import AboutSection from "../components/aboutsection/AboutSection";
+import TestimonialsSection from "../components/testimonialssection/TestimonialsSection";
+import Divider from "../components/divider/Divider";
 
-export const IndexPageTemplate = () => (
-  // {
-  // image,
-  // title,
-  // heading,
-  // subheading,
-  // mainpitch,
-  // description,
-  // intro
-  // }
-  <main>
-    <header></header>
-    <section id="goodiesIDo"></section>
-    <section id="divider"></section>
-    <section id="aboutMe"></section>
-    <section id="divider"></section>
-    <section id="peopleAreSaying"></section>
-  </main>
-);
+export const IndexPageTemplate = ({
+  image,
+  title,
+  heading,
+  subheading,
+  goodiesTitle,
+  goodiesDescription,
+  goodiesGallery
+}) => {
+  return (
+    <>
+      <Header heading={heading} subheading={subheading} />
+      <main>
+        <GoodiesSection
+          title="Goodies That I Do"
+          description="Description of goodies"
+        />
+        <Divider />
+        <AboutSection title="About me" description="description of about me" />
+        <Divider />
+        <TestimonialsSection
+          title="What people are saying"
+          description="testimonials description"
+        />
+      </main>
+    </>
+  );
+};
 
 IndexPageTemplate.propTypes = {
   // image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -48,9 +58,9 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
+        goodiesTitle={frontmatter.goodiesTitle}
+        goodiesDescription={frontmatter.goodiesDescription}
+        goodiesGallery={frontmatter.goodiesGallery}
       />
     </Layout>
   );
@@ -71,34 +81,8 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
         heading
         subheading
-        mainpitch {
-          title
-          description
-        }
-        description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-          }
-          heading
-          description
-        }
       }
     }
   }

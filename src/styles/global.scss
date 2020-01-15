@@ -163,14 +163,39 @@ input::-moz-focus-inner {
   box-sizing: border-box;
 }
 
-// // VARIABLES
-// $primary: #8c6f71;
-// $secondary: #ed3d5b;
+.visuallyHidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(00 0 0);
+  overflow: hidden;
+}
 
 // GLOBAL STYLES
 * {
   padding: 0;
   margin: 0;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-family: "Lily Script One", sans-serif;
+  color: #8c6f71;
+  margin-bottom: 20px;
 }
 
 h4 {
@@ -183,10 +208,27 @@ h4 {
   margin: 0 auto;
   font-family: "Lily Script One", sans-serif;
   color: #8c6f71;
+  height: 100%;
 }
 
 .flexContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.buttonLink {
+  color: #ffffff;
+  font-size: 1.2rem;
+  background-color: #ed3d5b;
+  padding: 8px 50px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline;
+  margin: 50px auto 0 auto;
+}
+
+.section {
+  padding: 60px 0;
+  text-align: center;
 }
