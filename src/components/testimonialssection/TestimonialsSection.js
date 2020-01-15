@@ -1,7 +1,6 @@
 import React from "react";
-import styles from "./AboutSection.module.scss";
 
-const AboutSection = ({ title, description }) => {
+const TestimonialsSection = ({ title, description }) => {
   return (
     <section className="section">
       <div className="wrapper">
@@ -12,4 +11,4 @@ const AboutSection = ({ title, description }) => {
   );
 };
 
-export default AboutSection;
+export default TestimonialsSection;

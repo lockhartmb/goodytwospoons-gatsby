@@ -1,10 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-import pinkCupcake from "../img/pinkCupcake.jpg";
-import lemonCupcake from "../img/lemonCupcake.jpg";
 import Layout from "../components/Layout";
 import Header from "../components/header/Header";
 import GoodiesSection from "../components/goodiessection/GoodiesSection";
+import AboutSection from "../components/aboutsection/AboutSection";
+import TestimonialsSection from "../components/testimonialssection/TestimonialsSection";
 import Divider from "../components/divider/Divider";
 
 export const IndexPageTemplate = ({
@@ -16,19 +16,21 @@ export const IndexPageTemplate = ({
   goodiesDescription,
   goodiesGallery
 }) => {
-  console.log(goodiesGallery);
   return (
     <>
       <Header heading={heading} subheading={subheading} />
       <main>
         <GoodiesSection
-          goodiesTitle={goodiesTitle}
-          description={goodiesDescription}
+          title="Goodies That I Do"
+          description="Description of goodies"
         />
-        <Divider image={pinkCupcake} />
-        {/* <Section title="About me" /> */}
-        <Divider image={lemonCupcake} />
-        {/* <Section title="What people are saying" /> */}
+        <Divider />
+        <AboutSection title="About me" description="description of about me" />
+        <Divider />
+        <TestimonialsSection
+          title="What people are saying"
+          description="testimonials description"
+        />
       </main>
     </>
   );

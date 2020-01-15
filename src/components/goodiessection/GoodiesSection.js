@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "gatsby";
 import styles from "./GoodiesSection.module.scss";
 
-const GoodiesSection = ({ goodiesTitle, description }) => {
+const GoodiesSection = ({ title, description }) => {
   return (
-    <section className={styles.section}>
+    <section className="section">
       <div className="wrapper">
-        <h3>{goodiesTitle}</h3>
+        <h3>{title}</h3>
         <p>{description}</p>
         <div className="gallery">
           <div className="galleryitem">
