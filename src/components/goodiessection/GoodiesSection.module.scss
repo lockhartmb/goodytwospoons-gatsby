@@ -1,5 +1,21 @@
-.section {
-	min-height: 80vh;
-	padding: 60px 0;
-	text-align: center;
+.goodiesSection {
+  background-position: center center;
+  background-size: cover;
+}
+
+.description {
+  font-size: 1.5rem;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 820px) {
+  .gallery {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

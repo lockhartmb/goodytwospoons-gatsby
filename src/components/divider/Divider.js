@@ -1,29 +1,11 @@
 import React from "react";
 import styles from "./Divider.module.scss";
-import { useStaticQuery, graphql } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 
-const Divider = () => {
-  const data = useStaticQuery(graphql`
-    {
-      allFile(filter: { name: { eq: "lemonCupcake" } }) {
-        edges {
-          node {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
-  const imageData = data.allFile.edges[0].node.childImageSharp.fluid;
-
+const Divider = ({ src }) => {
   return (
     <BackgroundImage
-      fluid={imageData}
+      fluid={src}
       className={styles.dividerSection}
     ></BackgroundImage>
   );

@@ -28,7 +28,7 @@
   display: none;
 }
 
-@media (min-width: 1055px) {
+@media (min-width: 800px) {
   .hamburgerIcon {
     display: none;
   }
@@ -70,7 +70,7 @@
 
     a {
       text-decoration: none;
-      padding: 10px 30px;
+      padding: 10px;
       display: inline-block;
     }
 
