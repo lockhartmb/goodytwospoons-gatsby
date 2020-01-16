@@ -4,9 +4,7 @@ import styles from "./GoodieItem.module.scss";
 const GoodieItem = ({ caption }) => {
   return (
     <div className={styles.goodieItem}>
-      <div className={styles.image}>
-        <span>hello</span>
-      </div>
+      <div className={styles.image}></div>
       <h4>{caption}</h4>
     </div>
   );
