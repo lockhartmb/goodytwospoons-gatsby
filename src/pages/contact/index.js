@@ -8,7 +8,7 @@ const Contact = () => {
       <HeaderShort />
       <section className="section">
         <div className="content">
-          <h1>Contact</h1>
+          <h2>Contact</h2>
         </div>
       </section>
     </Layout>
