@@ -16,6 +16,7 @@ export const IndexPageTemplate = ({
   goodiesDescription,
   aboutTitle,
   aboutText,
+  aboutImage,
   pinkCupcake,
   lemonCupcake,
   backgroundImage
@@ -34,6 +35,7 @@ export const IndexPageTemplate = ({
           title={aboutTitle}
           description={aboutText}
           backgroundImage={backgroundImage}
+          aboutImage={aboutImage}
         />
         <Divider src={pinkCupcake} />
         <TestimonialsSection
@@ -75,7 +77,7 @@ const IndexPage = ({ data }) => {
         goodiesDescription={frontmatter.goodies.goodiesDescription}
         aboutTitle={frontmatter.about.aboutTitle}
         aboutText={frontmatter.about.aboutText}
-        // aboutImage={frontmatter.aboutImage.childImageSharp.fluid}
+        aboutImage={frontmatter.about.image.childImageSharp.fixed}
         pinkCupcake={pinkCupcake}
         lemonCupcake={lemonCupcake}
         backgroundImage={backgroundImage}
@@ -108,6 +110,13 @@ export const pageQuery = graphql`
         about {
           aboutTitle
           aboutText
+          image {
+            childImageSharp {
+              fixed(width: 300, quality: 100) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
         }
       }
     }
