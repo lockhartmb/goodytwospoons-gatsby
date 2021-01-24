@@ -5,16 +5,11 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Lily Script One`
-          },
-          {
-            family: `Old Standard TT`,
-            variants: [`400`, `400i`, `700`]
-          }
+          `Parisienne`,
+          `Old Standard TT\:400,400i,700`,
         ]
       }
     },
