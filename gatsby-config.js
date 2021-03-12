@@ -5,7 +5,7 @@ module.exports = {
 	},
 	plugins: [
 		{
-			resolve: `gatsby-plugin-google-fonts`,
+			resolve: `gatsby-plugin-google-fonts-v2`,
 			options: {
 				fonts: [`Parisienne`, `Old Standard TT\:400,400i,700`],
 			},
