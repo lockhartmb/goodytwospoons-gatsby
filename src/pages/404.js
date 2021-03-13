@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import HeaderShort from '../components/Header/HeaderShort'
+import HeaderShort from '../components/header/HeaderShort'
 
 const NotFoundPage = () => (
 	<Layout>
