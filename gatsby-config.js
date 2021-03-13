@@ -4,12 +4,6 @@ module.exports = {
 		description: 'Gluten free baking made fresh in Thunder Bay, Ontario.',
 	},
 	plugins: [
-		{
-			resolve: `gatsby-plugin-google-fonts-v2`,
-			options: {
-				fonts: [`Parisienne`, `Old Standard TT\:400,400i,700`],
-			},
-		},
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-sass',
 		{
